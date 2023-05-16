@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Card making</title>
+</head>
+
+<body>
+    <app-navbar></app-navbar>
+    <div class="card-container">
+        <div class="card_sec">
+            <div class="card_block">
+                <h3>Total Projects</h3>
+                <h1>{{ totalProjectCount }}</h1>
+            </div>
+        </div>
+        <div class="card_sec" *ngFor="let status of projectCounts">
+            <div class="card_block">
+                <h3>{{ status.status }}</h3>
+                <h1>{{ status.count }}</h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

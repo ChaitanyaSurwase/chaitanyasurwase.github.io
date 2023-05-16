@@ -1,0 +1,117 @@
+<app-navbar></app-navbar>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+            /* border: 1px solid #ddd; */
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .btn {
+            background-color: blue;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-close {
+            background-color: red;
+        }
+
+        .btn-cancel {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-bar-container">
+        <input type="text" placeholder="Search" class="search-bar" [(ngModel)]="searchTerm" (input)="searchProjects()">
+        <div class="sort-by-container">
+            <label for="sort-by-select">Sort By:</label>
+            <!-- <select name="sort-by" id="sort-by-select" [(ngModel)]="selectedColumn" (change)="sortProjects()"> -->
+            <select name="sort-by" id="sort-by-select" [(ngModel)]="selectedColumn"
+                (change)="sortProjects(selectedColumn)">
+
+                <option value="">None</option>
+                <option value="projectName">Project Name</option>
+                <option value="reason">Reason</option>
+                <option value="type">Type</option>
+                <option value="division">Division</option>
+                <option value="category">Category</option>
+                <option value="priority">Priority</option>
+                <option value="department">Department</option>
+                <option value="location">Location</option>
+                <option value="status">Status</option>
+            </select>
+        </div>
+    </div>
+
+    <table>
+        <!-- Table rows and columns -->
+    </table>
+
+
+    <table>
+        <tr>
+            <th>Project</th>
+            <th>Reason</th>
+            <th>Type</th>
+            <th>Division</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Dept.</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+        <!-- <tr *ngFor="let project of projects"> -->
+        <tr *ngFor="let project of getPaginatedProjects()">
+
+            <td>{{ project.projectName }}</td>
+            <td>{{ project.reason }}</td>
+            <td>{{ project.type }}</td>
+            <td>{{ project.division }}</td>
+            <td>{{ project.category }}</td>
+            <td>{{ project.priority }}</td>
+            <td>{{ project.department }}</td>
+            <td>{{ project.location }}</td>
+            <td>{{ project.status }}</td>
+            <td>
+                <button class="btn" (click)="updateStatus(project._id, 'start')">Start</button>
+                <button class="btn btn-close" (click)="updateStatus(project._id, 'close')">Close</button>
+                <button class="btn btn-cancel" (click)="updateStatus(project._id, 'cancel')">Cancel</button>
+            </td>
+
+        </tr>
+    </table>
+    <div class="pagination-container">
+        <button class="pagination-button" *ngFor="let page of totalPagesArray"
+            [ngClass]="{'active': page === currentPage}" (click)="goToPage(page)">
+            {{ page }}
+        </button>
+    </div>
+
+
+
+</body>
+
+</html>

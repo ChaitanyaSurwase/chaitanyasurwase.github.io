@@ -1,0 +1,124 @@
+<!-- <app-navbar></app-navbar> -->
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Project Creation Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+    <!-- <nav>
+        <ul>
+            <div class="container" style="background-color: blue; width: 100%; color:antiquewhite">
+
+                <li><a href="#">Create Project</a></li>
+
+            </div>
+        </ul>
+    </nav> -->
+    <div class="input-group mb-3" style="width: 60%;">
+        <input type="text" class="form-control" [(ngModel)]="projectName" placeholder="Enter Project Theme"
+            aria-label="Enter Project Theme" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <!-- <button type="submit" class="btn btn-primary custom-btn">Save Project</button> -->
+            <button type="submit" class="btn btn-primary custom-btn" #saveBtn (click)="saveProject()">Save
+                Project</button>
+            <!-- <button type="submit" class="btn btn-primary custom-btn">Save Project</button> -->
+
+
+
+        </div>
+    </div>
+
+    <!-- <form ngSubmit="saveProject()"> -->
+    <!-- <form action="/submit-form" method="post"> -->
+    <form action="/submit-form" method="post">
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputState">Reason</label>
+                <select id="inputState" class="form-control" [(ngModel)]="reason" name="reason">
+
+                    <option selected>For Business</option>
+                    <option selected>Dealership</option>
+                    <option selected>Transport</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Type</label>
+                <select id="inputState" class="form-control" [(ngModel)]="type" name="type">
+                    <option selected>Internal</option>
+                    <option selected>External</option>
+                    <option selected>Vendor</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Division</label>
+                <select id="inputState" class="form-control" [(ngModel)]="division" name="division">
+                    <option selected>Compressor</option>
+                    <option selected>Filters</option>
+                    <option selected>Pumps</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputState">Category</label>
+                <select id="inputState" class="form-control" [(ngModel)]="category" name="category">
+                    <option selected>Quality A</option>
+                    <option selected>Quality B</option>
+                    <option selected>Quality C</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Priority</label>
+                <select id="inputState" class="form-control" [(ngModel)]="priority" name="priority">
+                    <option selected>High</option>
+                    <option selected>Low</option>
+                    <option selected>Medium</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Department</label>
+                <select id="inputState" class="form-control" [(ngModel)]="department" name="department">
+                    <option selected>Strategy</option>
+                    <option selected>Finance</option>
+                    <option selected>Quality</option>
+                    <option selected>Maintenance</option>
+                    <option selected>Stores</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" [(ngModel)]="startDate" name="startDate" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="startDate">End Date:</label>
+                <input type="date" id="endDate" [(ngModel)]="endDate" name="endDate" class="form-control">
+
+            </div>
+
+
+            <div class="form-group col-md-4">
+                <label for="inputState">Location</label>
+                <select id="inputState" [(ngModel)]="location" name="location" class="form-control">
+                    <option selected>Pune</option>
+                    <option selected>Delhi</option>
+                    <option selected>Mumbai</option>
+                    <option>...</option>
+                </select>
+            </div>
+        </div>
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+.form-row {
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+.btn-start {
+    background-color: blue;
+    color: white;
+}
+
+.btn-close {
+    background-color: red;
+    color: white;
+}
+
+.btn-cancel {
+    background-color: gray;
+    color: white;
+}
+
+.btn:not(:last-child) {
+    margin-right: 10px;
+}
+
+.border-0 {
+    border: none !important;
+}
+
+.rounded-0 {
+    border-radius: 0 !important;
+}
+
+/*  */
+/* Style for search bar */
+.search-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.search-bar {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 10%;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.sort-by-container {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    margin-right: 5px;
+}
+
+select {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.pagination-container {
+    margin-top: 20px;
+}
+
+.pagination-button {
+    background-color: #f2f2f2;
+    color: black;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.pagination-button:hover {
+    background-color: #ddd;
+}
+
+.pagination-button.active {
+    background-color: blue;
+    color: white;
+}

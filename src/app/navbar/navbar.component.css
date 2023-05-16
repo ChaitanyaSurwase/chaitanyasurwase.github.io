@@ -1,0 +1,30 @@
+    .navbar {
+        background: linear-gradient(to right, #0b4377, #3475dd);
+        padding: 1rem;
+        color: white;
+        height: 30px;
+        border-radius: 0 0 0 20%;
+        position: relative;
+    }
+
+    .navbar-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .create-project {
+        margin-right: 0.5rem;
+    }
+
+    .navbar-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .navbar-logo img {
+        height: 20px;
+        /* Adjust the height as per your logo's dimensions */
+    }
